@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlus - Patient Appointment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">CarePlus<span>+</span></div>
+
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/appointment">Book Appointment</a>
+    <a href="/appointments">View Appointments</a>
+    <a href="/admin">Admin Login</a>
+</nav>
+
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tagline">YOUR HEALTH, OUR PRIORITY</p>
+
+            <h1>Quality Healthcare<br>
+                <span>Made Simple</span>
+            </h1>
+
+            <p class="hero-text">
+                Book your appointments easily, manage your visits,
+                and explore our educational doctor recommendation demo.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/appointment" class="btn-primary">
+                    Book Appointment
+                </a>
+
+                <a href="/appointments" class="btn-secondary">
+                    View Appointments
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="medical-icon">✚</div>
+            <h2>Care That Matters</h2>
+            <p>Simple appointment booking for better healthcare management.</p>
+
+            <div class="feature">
+                <span>✓</span> Easy Appointment Booking
+            </div>
+
+            <div class="feature">
+                <span>✓</span> Patient Record Management
+            </div>
+
+            <div class="feature">
+                <span>✓</span> ML Prediction Demo
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Our Features</h2>
+        <p class="section-subtitle">
+            Everything you need to manage patient appointments.
+        </p>
+
+        <div class="service-container">
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>Book Appointment</h3>
+                <p>Enter patient details and select a doctor and appointment date.</p>
+                <a href="/appointment">Book Now →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Patient Records</h3>
+                <p>View the appointments saved in your system database.</p>
+                <a href="/appointments">View Records →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>ML Demo</h3>
+                <p>Explore the educational machine learning prediction feature.</p>
+                <a href="/appointment">Try Demo →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 CarePlus Patient Appointment System | Academic Project</p>
+    </footer>
+
+</body>
+</html>

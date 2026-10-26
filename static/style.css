@@ -1,0 +1,381 @@
+
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8fc;
+    color: #243247;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #1769aa;
+}
+
+.logo span {
+    color: #19b5a5;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #159b96;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 85px 8%;
+    background: linear-gradient(120deg, #eaf5ff, #f7fcff);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.tagline {
+    color: #159b96;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #17365d;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #168bba;
+}
+
+.hero-text {
+    color: #64748b;
+    max-width: 540px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #1769aa;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #10558d;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid #1769aa;
+    color: #1769aa;
+    background: white;
+}
+
+.btn-secondary:hover {
+    background: #eaf5ff;
+}
+
+/* Hero Information Card */
+.hero-card {
+    flex: 0 0 330px;
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(23, 54, 93, 0.10);
+}
+
+.medical-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    background: #e4f7f5;
+    color: #159b96;
+    font-size: 38px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.hero-card h2 {
+    color: #17365d;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.feature {
+    padding: 10px 0;
+    border-top: 1px solid #edf1f5;
+    color: #475569;
+    font-size: 14px;
+}
+
+.feature span {
+    color: #159b96;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Services Section */
+.services {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    color: #17365d;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #edf1f5;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(23, 54, 93, 0.10);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #17365d;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.service-card a {
+    color: #168bba;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.service-card a:hover {
+    color: #159b96;
+}
+
+/* Footer */
+footer {
+    background: #17365d;
+    color: #e2e8f0;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 55px 6%;
+    }
+
+    .hero-card {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        padding: 45px 6%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+}
+
+/* Appointment Forms */
+form {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1769aa;
+    box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.10);
+}
+
+button {
+    padding: 12px 20px;
+    background: #1769aa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #10558d;
+}
+
+/* Appointment Records Table */
+table {
+    width: 90%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+    padding: 13px 15px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th {
+    background: #1769aa;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f1f7fc;
+}
+
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 8px 6px;
+    }
+}

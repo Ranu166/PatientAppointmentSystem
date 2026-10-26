@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Appointments</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>All Patient Appointments</h1>
+    <p>Patient Appointment System</p>
+</header>
+
+<section class="services">
+    <h2>Appointment Records</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Doctor</th>
+            <th>Appointment Date</th>
+        </tr>
+
+        {% for patient in records %}
+        <tr>
+            {% for value in patient %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="5">No appointments found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/"><button type="button">Back to Home</button></a>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Prediction Result</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>ML Demo Prediction Result</h1>
+    <p>Patient Appointment System</p>
+</header>
+
+<section class="services">
+    <h2>Prediction Result</h2>
+
+    <p>Entered Age: <strong>{{ age }}</strong></p>
+
+    <p>Demo Model Output:</p>
+    <h2>{{ prediction }}</h2>
+
+    <p>This is an educational demonstration, not medical advice.</p>
+
+    <a href="/appointment">
+        <button>Back to Appointment</button>
+    </a>
+
+    <br><br>
+
+    <a href="/">
+        <button>Home</button>
+    </a>
+</section>
+
+</body>
+</html>
+```

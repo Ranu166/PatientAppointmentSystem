@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Appointment | CarePlus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            background: #f5f8fc;
+        }
+
+        .edit-container {
+            max-width: 600px;
+            margin: 45px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 28px rgba(23, 54, 93, 0.08);
+        }
+
+        .edit-container h1 {
+            color: #17365d;
+            margin-bottom: 8px;
+        }
+
+        .edit-container p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .edit-container form {
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .edit-container label {
+            display: block;
+            font-weight: bold;
+            color: #334155;
+            margin-top: 12px;
+        }
+
+        .edit-container input,
+        .edit-container select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #dbe3ed;
+            border-radius: 6px;
+        }
+
+        .edit-container button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #1769aa;
+        }
+
+        .error {
+            background: #fff0f0;
+            color: #b91c1c;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 650px) {
+            .edit-container {
+                margin: 25px 5%;
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">CarePlus<span>+</span></div>
+
+        <nav>
+            <a href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('admin_logout') }}">Logout</a>
+        </nav>
+    </header>
+
+    <main class="edit-container">
+
+        <h1>Edit Appointment</h1>
+        <p>Update the patient appointment details below.</p>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST">
+
+            <label for="name">Patient Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                value="{{ record.name }}"
+                maxlength="100"
+                required
+            >
+
+            <label for="age">Patient Age</label>
+            <input
+                type="number"
+                id="age"
+                name="age"
+                value="{{ record.age }}"
+                min="1"
+                max="120"
+                required
+            >
+
+            <label for="doctor">Doctor Speciality</label>
+
+            <select id="doctor" name="doctor" required>
+
+                <option value="General Physician"
+                    {% if record.doctor =='GeneralPhysician' %}selected{% endif %}>
+                    General Physician
+                </option>
+
+                <option value="Dermatologist"
+                    {% if record.doctor =='Dermatologist' %}selected{% endif %}>
+                    Dermatologist
+                </option>
+
+                <option value="Cardiologist"
+                    {% if record.doctor =='Cardiologist' %}selected{% endif %}>
+                    Cardiologist
+                </option>
+
+                <option value="Orthopedic"
+                    {% if record.doctor =='Orthopedic' %}selected{% endif %}>
+                    Orthopedic
+                </option>
+
+                <option value="Neurologist"
+                    {% if record.doctor =='Neurologist' %}selected{% endif %}>
+                    Neurologist
+                </option>
+
+                <option value="Pediatrician"
+                    {% if record.doctor =='Pediatrician' %}selected{% endif %}>
+                    Pediatrician
+                </option>
+
+                <option value="Gynecologist"
+                    {% if record.doctor =='Gynecologist' %}selected{% endif %}>
+                    Gynecologist
+                </option>
+
+                <option value="Dentist"
+                    {% if record.doctor =='Dentist' %}selected{% endif %}>
+                    Dentist
+                </option>
+
+                <option value="ENT Specialist"
+                    {% if record.doctor =='ENTSpecialist' %}selected{% endif %}>
+                    ENT Specialist
+                </option>
+
+                <option value="Ophthalmologist"
+                    {% if record.doctor =='Ophthalmologist' %}selected{% endif %}>
+                    Ophthalmologist (Eye Specialist)
+                </option>
+
+            </select>
+
+            <label for="date">Appointment Date</label>
+            <input
+                type="date"
+                id="date"
+                name="date"
+                value="{{ record.appointment_date }}"
+                required
+            >
+
+            <button type="submit">Save Changes</button>
+
+        </form>
+
+        <a class="back-link"
+           href="{{ url_for('admin_dashboard') }}">
+            ← Back to Dashboard
+        </a>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CarePlus Patient Appointment System</p>
+    </footer>
+
+</body>
+</html>

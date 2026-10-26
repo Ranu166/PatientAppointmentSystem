@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | CarePlus</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #eaf5ff, #f5f8fc);
+        }
+
+        .login-container {
+            width: 90%;
+            max-width: 420px;
+            margin: auto;
+            padding: 35px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 35px rgba(23, 54, 93, 0.12);
+        }
+
+        .login-container h1 {
+            text-align: center;
+            color: #17365d;
+            margin-bottom: 8px;
+        }
+
+        .login-container .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .login-container form {
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .login-container label {
+            display: block;
+            font-weight: bold;
+            color: #334155;
+            margin-top: 12px;
+        }
+
+        .login-container button {
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .error {
+            background: #fff0f0;
+            color: #b91c1c;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+            color: #1769aa;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 35px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">CarePlus<span>+</span></div>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <h1>Admin Login</h1>
+        <p class="subtitle">Sign in to manage patient appointments</p>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="{{ url_for('admin_login') }}">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"
+                   placeholder="Enter admin username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Enter admin password" required>
+
+            <button type="submit">Login to Dashboard</button>
+        </form>
+
+        <a class="back-link" href="/">← Back to Home</a>
+    </main>
+
+    <footer>
+        <p>© 2026 CarePlus Patient Appointment System</p>
+    </footer>
+
+</body>
+</html>

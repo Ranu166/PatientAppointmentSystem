@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | CarePlus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>CarePlus+</h1>
+    <h2>Book Your Appointment</h2>
+    <p>Choose a doctor according to your medical needs.</p>
+</header>
+
+<section class="services">
+
+    <h2>Patient Appointment Form</h2>
+
+    <form action="/book" method="POST">
+
+        <label for="name">Patient Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter patient name"
+            required
+        >
+
+        <label for="age">Patient Age</label>
+        <input
+            type="number"
+            id="age"
+            name="age"
+            min="1"
+            max="120"
+            placeholder="Enter age"
+            required
+        >
+
+        <label for="doctor">Select Doctor Speciality</label>
+        <select id="doctor" name="doctor" required>
+            <option value="">-- Select Doctor --</option>
+            <option value="General Physician">General Physician</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Orthopedic">Orthopedic</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="Pediatrician">Pediatrician</option>
+            <option value="Gynecologist">Gynecologist</option>
+            <option value="Dentist">Dentist</option>
+            <option value="ENT Specialist">ENT Specialist</option>
+            <option value="Ophthalmologist">Ophthalmologist (Eye Specialist)</option>
+        </select>
+
+        <label for="date">Appointment Date</label>
+        <input
+            type="date"
+            id="date"
+            name="date"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">Confirm Appointment</button>
+
+    </form>
+
+    <br>
+    <a href="/">Back to Home</a>
+
+    <hr>
+
+    <h2>ML Demo Prediction</h2>
+    <p>Enter the patient's age to test the machine learning demo.</p>
+
+    <form action="/predict" method="POST">
+
+        <label for="prediction_age">Patient Age</label>
+        <input
+            type="number"
+            id="prediction_age"
+            name="age"
+            min="1"
+            max="120"
+            placeholder="Enter age"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">ML Demo Prediction</button>
+
+    </form>
+
+</section>
+
+<footer>
+    <p>© 2026 CarePlus Patient Appointment System</p>
+</footer>
+
+</body>
+</html>
